@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "DM Sans", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 body{
@@ -17,12 +18,13 @@ body{
 
 nav{
     max-width: 1164px;
-    height: 64px;
+    min-height: 64px;
+    height: auto;
     display: flex;
     margin: 0 auto;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 12px 20px;
     position: relative;
 }
 
@@ -37,7 +39,7 @@ nav{
     width: auto;
 }
 
-.nav-left h1{
+.nav-left span{
     font-size: 15px;
     color: #ff640a;
 }
@@ -93,7 +95,7 @@ nav button{
 .hero-body{
     width: 300px;
     height: 100%;
-    background-color: #000;
+    /* background-color: #000; */
     justify-content: center;
     align-items: center;
     
@@ -358,7 +360,7 @@ nav button{
 
 .head-on p{
     color: #bbb;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
 }
 
@@ -455,17 +457,17 @@ nav button{
 }
 
 /* QUESTION */
-.question{
+.member{
     text-align: center;
 }
 
-.question h2{
+.member h2{
     color: #fff;
     font-size: 2.75rem;
     font-weight: 700;
     margin-bottom: 20px;
 }
-.question button{
+.member button{
     color: #bbb;
     border: 2px solid #bbb;
     border-radius: 25px;
@@ -477,7 +479,7 @@ nav button{
     cursor: pointer;
 }
 
-.question button:hover{
+.member button:hover{
     color: #fff;
     background-color: #000;
     border: 2px solid #fff;
@@ -509,6 +511,7 @@ nav button{
     border: 1px solid #ff640a;
     border-radius: 20px;
     padding: 10px 30px;
+    font-size: 15px;
     font-weight: 700;
     cursor: pointer;
     margin-bottom: 20px;
@@ -655,7 +658,8 @@ nav button{
 /* FOOTER */
 .footer{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
     align-items: flex-start;
     justify-content: space-between;
     gap: 40px;
@@ -663,7 +667,7 @@ nav button{
 }
 
 .footer .col{
-    flex: 1;
+    flex: 1 1 160px;
 }
 
 .footer .col h3{
@@ -693,7 +697,7 @@ nav button{
     align-items: center;
     border-top: 1px solid #8c8c8c;
     border-bottom: 1px solid #8c8c8c;
-    margin: 0 5%;
+    width: 100%;
     padding: 25px;
     color: #999;
     font-size: 14px;
@@ -703,6 +707,7 @@ nav button{
     display: flex;
     gap: 5px;
     font-size: 18px;
+    width: 100%;
 }
 
 .language select{
@@ -714,7 +719,8 @@ nav button{
 
 /* AFTRE FOOTER */
 .after-footer{
-    padding: 10px 70px 30px;
+    width: 100%;
+
 }
 
 .after-text{
@@ -760,4 +766,210 @@ nav button{
 
 .after-footer button:hover{
     color: #fff;
+}
+
+
+/*---------- Responsiveness --------- */
+/* Tablets Devices */
+@media (max-width: 768px){
+.hero{
+    display: grid;
+    min-height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-body h2, 
+.hero-body p{
+    font-size: 25px;
+    text-align: center;
+    }
+
+.hero-body button{
+    font-size: 15px;
+    }
+
+.subscription{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    }
+
+.subscription .sub h3{
+    text-align: center;
+}
+
+.paragraph p{
+    font-size: 15px;
+    text-align: center;
+    }
+
+    .faq{
+        padding: 10px 5%;
+    }
+
+    .questions{
+        padding: 0 5%;
+    }
+
+    .questions p{
+        margin-bottom: 70px;
+    }
+
+
+    .questions .para p{
+        font-size: 1.10rem;
+    }
+
+    .footer{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px 10%;
+    }
+
+     .footer-down .legal{
+        padding: 20px;
+    }
+
+    .footer-down .legal p{
+        font-size: 20px;
+    }
+
+   .after-footer .after-text{
+        display: grid;
+        padding: 10px 5%;
+    }
+
+}
+
+/* Mobile Devices */
+@media (max-width: 600px){
+    nav{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+        padding: 12px 5%;
+    }
+
+    .hero{
+        align-items: center;
+        display: grid;
+        justify-items: center;
+        padding: 50px 10%;
+    }
+
+    .plans{
+        display: grid;
+        padding: 0 5%;
+    }
+
+    .text{
+        padding: 30px 5%;
+        text-align: center;
+    }
+    
+    .text p{
+        font-size: 13px;
+    }
+
+    .head-on{
+        padding: 50px 0;
+    }
+
+    .get-more{
+        padding: 0 5%;
+    }
+
+    .get-more h2{
+        color: #fff;
+        font-size: 35px;
+        margin-top: 60px;
+    }
+
+    .get-more p{
+        font-size: 18px;
+        padding: 0 5%;
+        margin-bottom: 50px;
+    }
+
+    .subscription{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        margin-bottom: -15px;
+    }
+
+    .subscription .sub h3{
+        text-align: center;
+    }
+
+    .paragraph p{
+        padding: 30px 7%;
+        color: #fff;
+    }
+
+    .faq{
+        padding: 10px 5%;
+        margin-top: -50px;
+    }
+
+    .questions{
+        padding: 0 5%;
+        margin-top: -40px;
+    }
+
+    .questions p{
+        margin-bottom: 70px;
+    }
+
+    .questions .para p{
+        font-size: 1.10rem;
+    }
+
+    .footer { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
+
+    .footer .col a{
+        font-size: 16px;
+    }
+
+    .footer-down{
+        display: grid;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-down .legal{
+        display: grid;
+    }
+
+    .footer-down .legal span{
+        display: none;
+    }
+
+    .footer-down .legal .company{
+        font-size: 20px;
+    }
+    
+    .footer-down .legal .com{
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .language select{
+        text-align: center;
+    }
+
+    .after-footer .after-text{
+        display: grid;
+        padding: 10px 5%;
+    }
+
+    .after-footer .left,
+    .after-footer .right{
+        font-size: 16px;
+    }
+
+    .after-text.expanded{
+        max-height: 2500px;
+    }
 }
